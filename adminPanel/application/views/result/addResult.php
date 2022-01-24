@@ -6,7 +6,7 @@ $this->load->view('include/header');
 					<h3 class="blank1">Add Result</h3>
 						<div class="tab-content">
 						<div class="tab-pane active" id="horizontal-form">
-							<form class="form-horizontal" action="" method="post">
+							<form class="form-horizontal" action="<?php echo site_url('resultController/saveResult');?>" method="post">
 	<div class="bs-example" data-example-id="form-validation-states-with-icons">
 						<div class="form-group">
 						<label for="focusedinput" class="col-sm-2 control-label">Category Name:</label>

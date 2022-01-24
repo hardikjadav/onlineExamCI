@@ -253,11 +253,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<img src="<?php echo base_url() ?>/public/admin/upload/<?php echo $fetch[0]['adminImage']?>" height="100px" width="100px">
 						<div class="sub_home">
 							<div class="sub_home_left">
-								
-									<input type="submit" value="Submit" name="submit">
-								
+							<input type="submit" value="Update" name="submit">
 							</div>
-							
+							<div class="sub_home_right">
+							<a href="<?php echo site_url('profile');?>"><img src="<?php echo base_url() ?>public/admin/assets/images/back.jpg"height="40px" width="40px"></a>
+							</div>
 							<div class="clearfix"> </div>
 						</div>
 						

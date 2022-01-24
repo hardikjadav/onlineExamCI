@@ -7,7 +7,7 @@ $this->load->view('include/header');
 		<div class="tab-content">
 			<div class="tab-pane active" id="horizontal-form">
 				<div class="bs-example" data-example-id="form-validation-states-with-icons">
-					<form class="form-horizontal" action="" method="post">
+					<form class="form-horizontal" action="<?php echo site_url('questionController/saveQuestion');?>" method="post">
 							
 						
 						<div class="form-group">

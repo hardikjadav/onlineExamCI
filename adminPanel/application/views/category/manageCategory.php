@@ -44,8 +44,8 @@ $this->load->view('include/header.php');
 									<tr>
 											
 											<td><?php echo $f->categoryName;?></td>
-											<td><a href="<?php echo site_url('adminControl/editCategory');?>/<?php echo $f->categoryId;?>"><img src="<?php echo base_url() ?>public/admin/assets/images/edit.jpg" height="40px" width="40px"></a></td>
-											<td><a href="<?php echo site_url('adminControl/deleteCategory');?>/<?php echo $f->categoryId;?>"><img src="<?php echo base_url() ?>public/admin/assets/images/delete1.jpg" height="40px" width="40px"></a></td>
+											<td><a href="<?php echo site_url('categoryController/editCategory');?>/<?php echo $f->categoryId;?>"><img src="<?php echo base_url() ?>public/admin/assets/images/edit.jpg" height="40px" width="40px"></a></td>
+											<td><a href="<?php echo site_url('categoryController/deleteCategory');?>/<?php echo $f->categoryId;?>"><img src="<?php echo base_url() ?>public/admin/assets/images/delete1.jpg" height="40px" width="40px"></a></td>
 											
 										</tr>
 										<?php }

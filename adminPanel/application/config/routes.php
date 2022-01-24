@@ -53,8 +53,40 @@ $route['default_controller'] = 'adminControl';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-//$route['view/index']='control/view/index';
-$route['(:any)']='adminControl/$1';
+//$route['adminControl']='adminControl';
+$route['index']='adminControl/index';
+$route['dashboard']='adminControl/dashboard';
+$route['changePassword']='adminControl/changePassword';
+$route['editUserProfile']='adminControl/editUserProfile';
+$route['profile']='adminControl/profile';
+$route['logout']='adminControl/logout';
+
+
+$route['addCategory']='categoryController/addCategory';
+$route['saveCategory']='categoryController/saveCategory';
+$route['searchCategory']='categoryController/searchCategory';
+$route['manageCategory']='categoryController/manageCategory';
+$route['editCategory']='categoryController/editCategory';
+$route['deleteCategory']='categoryController/deleteCategory';
+
+$route['addQuestion']='questionController/addQuestion';
+$route['saveQuestion']='questionController/saveQuestion';
+$route['searchQuestion']='questionController/searchQuestion';
+$route['manageQuestion']='questionController/manageQuestion';
+$route['editQuestion']='questionController/editQuestion';
+$route['deleteQuestion']='questionController/deleteQuestion';
+
+$route['addResult']='resultController/addResult';
+$route['saveResult']='resultController/saveResult';
+$route['searchResult']='resultController/searchResult';
+$route['manageResult']='resultController/manageResult';
+$route['editResult']='resultController/editResult';
+$route['deleteResult']='resultController/deleteResult';
+
+$route['about']='control/about';
+
+
+//$route['(:any)']='adminControl/$1';
 
 //category [get] listing
 //category/add [get] add view page

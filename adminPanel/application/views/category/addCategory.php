@@ -6,7 +6,7 @@ $this->load->view('include/header.php');
 					<h3 class="blank1">Add Category</h3>
 						<div class="tab-content">
 						<div class="tab-pane active" id="horizontal-form">
-							<form class="form-horizontal" action="" method="post">
+							<form class="form-horizontal" action="<?php echo site_url('CategoryController/saveCategory');?>" method="post">
 	
 							<div class="form-group">
 									<label for="focusedinput" class="col-sm-2 control-label">Category Name:</label>

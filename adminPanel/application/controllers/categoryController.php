@@ -1,12 +1,12 @@
 <?php
 
-class adminControl extends Ci_Controller
+class categoryController extends Ci_Controller
 {
 	
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->model('model');
+		$this->load->model('categoryModel');
 	}
 	
 	function index(){
@@ -14,7 +14,7 @@ class adminControl extends Ci_Controller
 		$this->load->view('category/index.php');
 	}
 	
-	function add()
+	function addCategory()
 	{
 		$this->load->view('category/addCategory.php');
 	}
@@ -53,7 +53,7 @@ class adminControl extends Ci_Controller
 			$value = $this->input->post('categoryName');
 
 			if(isset($value) and !empty($value)){
-				$data['fetch'] = $this->model->selectLike('category','categoryName',$value);
+				$data['fetch'] = $this->categoryModel->selectLike('category','categoryName',$value);
 				$data['link'] = '';
 				$data['message'] = 'Search Results';
 				$this->load->view('category/manageCategory' , $data);
@@ -70,8 +70,8 @@ class adminControl extends Ci_Controller
 	{
 		//$CategoryFetchArray['fetch']=$this->model->select('category');
 		$config = array();
-		$config["base_url"] = base_url() . "adminControl/manageCategory";
-        $config["total_rows"] = $this->model->getCount('category');
+		$config["base_url"] = base_url() . "categoryController/manageCategory";
+        $config["total_rows"] = $this->categoryModel->getCount('category');
         $config["per_page"] = 2;
         $config["uri_segment"] = 3;
 
@@ -82,7 +82,7 @@ class adminControl extends Ci_Controller
         $CategoryFetchArray["links"] = $this->pagination->create_links();
 		$CategoryFetchArray['message'] = '';
 
-        $CategoryFetchArray['fetch'] = $this->model->selectLimit('category',$config["per_page"], $page);
+        $CategoryFetchArray['fetch'] = $this->categoryModel->selectLimit('category',$config["per_page"], $page);
 
         
 		$this->load->view('category/manageCategory.php',$CategoryFetchArray);
@@ -92,7 +92,7 @@ class adminControl extends Ci_Controller
 	{
 		$categoryId= $this->uri->segment(3);
 		$whereArray= array("categoryId"=>$categoryId);
-		$res=$this->model->selectWhere('category',$whereArray);
+		$res=$this->categoryModel->selectWhere('category',$whereArray);
 		$fetchCategoryArray['fetch']=$res->result_array();
 		if($this->input->post('update'))
 		{
@@ -103,7 +103,7 @@ class adminControl extends Ci_Controller
 			$updatedBy=$this->session->userdata('adminId');
 			$dataArray=array("categoryName"=>$categoryName,"updatedAt"=>$updatedAt,"updatedBy"=>$updatedBy);
 
-			$categoryResult=$this->model->update('category',$dataArray,$whereArray);
+			$categoryResult=$this->categoryModel->update('category',$dataArray,$whereArray);
 			
 			if($categoryResult)
 			{
@@ -118,7 +118,7 @@ class adminControl extends Ci_Controller
 	{
 		$categoryId= $this->uri->segment(3);
 		$whereArray= array("categoryId"=>$categoryId);
-		$categoryResult=$this->model->delete('category',$whereArray);
+		$categoryResult=$this->categoryModel->delete('category',$whereArray);
 		if($categoryResult)
 		{
 			redirect('manageCategory','refresh');

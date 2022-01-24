@@ -43,8 +43,8 @@ $this->load->view('include/header.php');
 											
 											<td><?php echo $f->categoryName;?></td>
 											<td><?php echo $f->questionName;?></td>
-											<td><a href="<?php echo site_url('adminControl/editQuestion');?>/<?php echo $f->questionId;?>"><img src="<?php echo base_url() ?>public/admin/assets/images/edit.jpg" height="40px" width="40px"></a></td>
-											<td><a href="<?php echo site_url('adminControl/deleteQuestion');?>/<?php echo $f->questionId;?>"><img src="<?php echo base_url() ?>public/admin/assets/images/delete1.jpg" height="40px" width="40px"></a></td>
+											<td><a href="<?php echo site_url('questionController/editQuestion');?>/<?php echo $f->questionId;?>"><img src="<?php echo base_url() ?>public/admin/assets/images/edit.jpg" height="40px" width="40px"></a></td>
+											<td><a href="<?php echo site_url('questionController/deleteQuestion');?>/<?php echo $f->questionId;?>"><img src="<?php echo base_url() ?>public/admin/assets/images/delete1.jpg" height="40px" width="40px"></a></td>
 										</tr>
 										<?php }
 										}
